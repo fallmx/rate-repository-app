@@ -5,6 +5,7 @@ const theme = {
     textLight: '#ffffff',
     primary: '#0366d6',
     appBarBackground: '#24292e',
+    listBackground: '#e1e4e8',
   },
   fontSizes: {
     body: 14,
