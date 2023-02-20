@@ -10,13 +10,13 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
   },
-  // ...
 });
 
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <AppBarTab text="Repositories" />
+      <AppBarTab text="Repositories" navigateTo="/" />
+      <AppBarTab text="Sign in" navigateTo="/signin" />
     </View>
   );
 };
