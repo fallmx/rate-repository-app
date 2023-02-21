@@ -4,6 +4,7 @@ const theme = {
     textSecondary: '#586069',
     textLight: '#ffffff',
     primary: '#0366d6',
+    error: '#d73a4a',
     appBarBackground: '#24292e',
     background: '#e1e4e8',
   },

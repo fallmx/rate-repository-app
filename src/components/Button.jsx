@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 const Button = ({ text, onPress }) => {
   return (
     <View>
-      <Pressable android_ripple={{ radius: 100 }} onPress={onPress}>
+      <Pressable android_ripple={{ radius: 200, foreground: true }} onPress={onPress}>
         <View style={styles.button}>
           <Text color="textLight" fontSize="subheading" fontWeight="bold">{text}</Text>
         </View>
