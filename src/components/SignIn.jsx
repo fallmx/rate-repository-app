@@ -5,6 +5,8 @@ import { StyleSheet } from 'react-native';
 import Button from './Button';
 import * as yup from 'yup';
 
+import theme from '../theme';
+
 const initialValues = {
   username: '',
   password: '',
@@ -13,7 +15,7 @@ const initialValues = {
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.panel,
   },
   separator: {
     height: 15,
