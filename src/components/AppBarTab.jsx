@@ -1,6 +1,5 @@
 import { Pressable, View, StyleSheet } from "react-native"
 import Text from "./Text";
-import { useNavigate } from "react-router-native";
 
 const styles = StyleSheet.create({
   button: {
@@ -9,12 +8,10 @@ const styles = StyleSheet.create({
   }
 })
 
-const AppBarTab = ({ text, navigateTo }) => {
-  const navigate = useNavigate();
-
+const AppBarTab = ({ text, onPress }) => {
   return (
     <View>
-      <Pressable android_ripple={{ radius: 100 }} onPress={() => navigate(navigateTo)}>
+      <Pressable android_ripple={{ radius: 100 }} onPress={onPress}>
         <View style={styles.button}>
           <Text color="textLight" fontSize="subheading" fontWeight="bold">{text}</Text>
         </View>
