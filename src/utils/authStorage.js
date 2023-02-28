@@ -10,14 +10,14 @@ class AuthStorage {
   }
 
   setAccessToken(accessToken) {
-    AsyncStorage.setItem(
+    return AsyncStorage.setItem(
       `${this.namespace}:token`,
       accessToken
     );
   }
 
   removeAccessToken() {
-    AsyncStorage.removeItem(`${this.namespace}:token`);
+    return AsyncStorage.removeItem(`${this.namespace}:token`);
   }
 }
 
