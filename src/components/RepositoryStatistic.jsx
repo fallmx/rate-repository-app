@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const formatNumber = (number) => {
+export const formatNumber = (number) => {
   if (number >= 1000) {
     const rounded = Math.round(number / 100) / 10;
     return rounded + 'k';
