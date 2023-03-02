@@ -30,17 +30,20 @@ const SignInForm = ({ onSubmit }) => {
   return (
     <View>
       <FormikTextInput
+        testID="usernameField"
         name="username"
         placeholder="Username"
       />
       <Separator />
       <FormikTextInput
+        testID="passwordField"
         name="password"
         placeholder="Password"
         secureTextEntry
       />
       <Separator />
       <Button
+        testID="signInButton"
         text="Sign in"
         onPress={onSubmit}
       />
@@ -57,16 +60,12 @@ const validationSchema = yup.object().shape({
     .required('Password is required'),
 });
 
-const SignIn = () => {
-  const [signIn] = useSignIn();
-  const navigate = useNavigate();
-
+export const SignInHandler = ({ signIn, navigate }) => {
   const onSubmit = async (values) => {
     const { username, password } = values;
 
     try {
-      const { data } = await signIn({ username, password });
-      console.log(data);
+      await signIn({ username, password });
       navigate('/');
     } catch (e) {
       console.error(e);
@@ -85,5 +84,14 @@ const SignIn = () => {
     </View>
   );
 };
+
+const SignIn = () => {
+  const [signIn] = useSignIn();
+  const navigate = useNavigate();
+
+  return (
+    <SignInHandler signIn={signIn} navigate={navigate} />
+  );
+}
 
 export default SignIn;

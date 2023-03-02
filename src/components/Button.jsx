@@ -13,10 +13,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const Button = ({ text, onPress }) => {
+const Button = ({ text, onPress, ...props }) => {
   return (
     <View>
-      <Pressable android_ripple={{ radius: 200, foreground: true }} onPress={onPress}>
+      <Pressable android_ripple={{ radius: 200, foreground: true }} onPress={onPress} {...props}>
         <View style={styles.button}>
           <Text color="textLight" fontSize="subheading" fontWeight="bold">{text}</Text>
         </View>
