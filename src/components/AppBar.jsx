@@ -22,19 +22,26 @@ const AppBar = () => {
   const apolloClient = useApolloClient();
   const navigate = useNavigate();
 
+  const loggedIn = loading === false && data.me;
+
   const signOut = async () => {
     await authStorage.removeAccessToken();
     apolloClient.resetStore();
   }
 
-  const loggedIn = loading === false && data.me;
+  const WhenLoggedIn = () => (
+    <>
+      <AppBarTab text="Create a review" onPress={() => navigate('/createreview')} />
+      <AppBarTab text="Sign out" onPress={signOut} />
+    </>
+  );
 
   return (
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab text="Repositories" onPress={() => navigate('/')} />
         {loggedIn
-          ? <AppBarTab text="Sign out" onPress={signOut} />
+          ? <WhenLoggedIn />
           : <AppBarTab text="Sign in" onPress={() => navigate('/signin')} />}
       </ScrollView>
     </View>

@@ -1,7 +1,6 @@
 import FormikTextInput from './FormikTextInput';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
-import { StyleSheet } from 'react-native';
 import Button from './Button';
 import * as yup from 'yup';
 import useSignIn from '../hooks/useSignIn';
