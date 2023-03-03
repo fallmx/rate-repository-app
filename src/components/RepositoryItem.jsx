@@ -6,7 +6,6 @@ import RepositoryStatistic from './RepositoryStatistic';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.panel,
-    padding: 15,
   },
   descriptionContainer: {
     display: 'flex',
