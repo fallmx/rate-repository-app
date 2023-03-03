@@ -36,13 +36,20 @@ const AppBar = () => {
     </>
   );
 
+  const WhenNotLoggedIn = () => (
+    <>
+      <AppBarTab text="Sign in" onPress={() => navigate('/signin')} />
+      <AppBarTab text="Sign up" onPress={() => navigate('/signup')} />
+    </>
+  );
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab text="Repositories" onPress={() => navigate('/')} />
         {loggedIn
           ? <WhenLoggedIn />
-          : <AppBarTab text="Sign in" onPress={() => navigate('/signin')} />}
+          : <WhenNotLoggedIn />}
       </ScrollView>
     </View>
   );
