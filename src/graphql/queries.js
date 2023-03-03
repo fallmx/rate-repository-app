@@ -20,6 +20,19 @@ export const GET_REPOSITORY = gql`
     repository(id: $repositoryId) {
       ...CoreRepository
       url
+      reviews {
+        edges {
+          node {
+            text
+            user {
+              username
+            }
+            createdAt
+            rating
+            id
+          }
+        }
+      }
     }
   }
 `;

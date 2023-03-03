@@ -3,21 +3,17 @@ import RepositoryItem from './RepositoryItem';
 import theme from '../theme';
 import useRepositories from '../hooks/useRepositories';
 import { useNavigate } from 'react-router-native';
+import ItemSeparator from './ItemSeparator';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.background,
-  },
-  separator: {
-    height: 10,
   },
   itemContainer: {
     backgroundColor: theme.colors.panel,
     padding: 15,
   },
 });
-
-const ItemSeparator = () => <View style={styles.separator} />;
 
 export const RepositoryListContainer = ({ repositories, navigate }) => {
   const repositoryNodes = repositories
@@ -29,7 +25,7 @@ export const RepositoryListContainer = ({ repositories, navigate }) => {
       style={styles.container}
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
-      renderItem={({item}) => {
+      renderItem={({ item }) => {
         return (
           <Pressable
             android_ripple={{ radius: 250, foreground: true }}
