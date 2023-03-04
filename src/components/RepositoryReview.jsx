@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
   }
 });
 
-const RepositoryReview = ({ review }) => {
+const RepositoryReview = ({ review, title }) => {
   return (
     <View style={styles.container}>
       <View>
         <RatingMeter rating={review.rating} />
       </View>
       <View style={styles.content}>
-        <Text fontSize="subheading" fontWeight="bold">{review.user.username}</Text>
+        <Text fontSize="subheading" fontWeight="bold">{title}</Text>
         <Text color="textSecondary" >{format(new Date(review.createdAt), 'dd.MM.yyyy')}</Text>
         <Text style={styles.text} >{review.text}</Text>
       </View>

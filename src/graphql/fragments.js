@@ -13,3 +13,12 @@ export const CORE_REPOSITORY = gql`
     ownerAvatarUrl
   }
 `;
+
+export const CORE_REVIEW = gql`
+  fragment CoreReview on Review {
+    id
+    text
+    rating
+    createdAt
+  }
+`;

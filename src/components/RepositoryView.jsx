@@ -55,7 +55,7 @@ const RepositoryView = () => {
       renderItem={({ item }) => {
         return (
           <View style={styles.panelContainer}>
-            <RepositoryReview review={item} />
+            <RepositoryReview key={item.id} review={item} title={item.user.username}/>
           </View>
         );
       }}
